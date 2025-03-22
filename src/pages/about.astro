@@ -1,4 +1,5 @@
 ---
+import BaseLayout from '../layouts/base-layout.astro';
 import '../styles/global.css';
 
 const pageTitle = "About Me";
@@ -20,32 +21,8 @@ const skillColor = "orange";
 const fontWeight = "bold";
 const textCase = "uppercase";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-        <style define:vars={{skillColor, fontWeight, textCase}}>
-            .skill {
-                color: var(--skillColor);
-                font-weight: var(--fontWeight);
-                text-transform: var(--textCase);
-            }
-            h1 {
-                color: purple;
-                font-size: 4rem;
-            }
-        </style>
-	</head>
-	<body>
-    <a href="/">Home</a>
-    <a href="/about/">About</a>
-    <a href="/blog/">Blog</a>
-		<h1>{pageTitle}</h1>
-		<h2>My Astro About Page</h2>
+<BaseLayout pageTitle={pageTitle}>
+    <h2>My Astro About Page</h2>
         <p>This is a simple paragraph text. I'm working on the about page of this Astro website build. Never used this platform before. </p>
         <p>Here are a few facts about me:</p>
         <ul>
@@ -65,5 +42,5 @@ const textCase = "uppercase";
         {finished && <p>I finished this tutorial!</p>}
 
         {goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}
-	</body>
+</BaseLayout>
 </html>

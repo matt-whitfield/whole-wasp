@@ -1,0 +1,15 @@
+---
+import SocialLinks from '../components/social-links.astro';
+const platform = "github";
+const username = "withastro";
+
+---
+
+
+
+<footer>
+  <p>Learn more about my projects on <a href={`https://www.${platform}.com/${username}`}>{platform}</a>!</p>
+    <SocialLinks platform="LinkedIn" username="in/matt--whitfield" />
+    <SocialLinks platform="Instagram" username="_mattwhitfield/" />
+    <SocialLinks platform="Youtube" username="@mattwhitfield6331" />
+</footer>
