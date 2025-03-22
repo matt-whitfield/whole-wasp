@@ -50,16 +50,7 @@ html {
   margin: 0;
 }
 
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  
-}
+
 
 
 .nav-links a:hover,
@@ -116,11 +107,10 @@ header {
 .nav-links a {
   display: block;
   text-align: center;
-  padding: 10px 0;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
-  text-transform: uppercase;
+  
 }
 
 .nav-links a:hover,
@@ -145,4 +135,39 @@ header {
   .hamburger {
     display: none;
   }
+}
+
+/* Tag Styles */
+.tags-container {
+  margin: 2rem 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  margin: 0;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.5rem;
+  background-color: #e0e0ff;
+}
+
+.tag a {
+  color: #4040aa;
+  text-decoration: none;
+}
+
+.image-container {
+  margin: 1.5rem 0;
+  max-width: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }

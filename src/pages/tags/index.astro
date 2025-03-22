@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../../layouts/base-layout.astro';
+import '../../styles/global.css';
+const pageTitle = "A Page For All Things Tag";
+const allPosts = Object.values(import.meta.glob('../posts/*.md', { eager: true }));
+const tags = [...new Set(allPosts.map((post: any) => post.frontmatter.tags).flat())];
+
+---
+<BaseLayout pageTitle={pageTitle}>
+    <h2>Sorry to Disappoint you.</h2>    
+    <p>This is a page where I display the tags I've created. Who wants that? </p>
+    <div class="tags-container">
+        <div class="tags">
+            {tags.map((tag) => <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>)}
+        </div>
+    </div>
+   
+  </BaseLayout>
