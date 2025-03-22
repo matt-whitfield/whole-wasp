@@ -1,0 +1,62 @@
+---
+import '../styles/global.css';
+const { frontmatter } = Astro.props;
+---
+<meta charset="utf-8" />
+<h1>{frontmatter.title}</h1>
+<div class="image-container">
+    <img src={frontmatter.image.url} alt={frontmatter.image.alt || frontmatter.title} />
+</div>
+
+
+
+    <div>
+        <p>Written by {frontmatter.author}</p>
+        <p><em>{frontmatter.description}</em></p>
+        <p>Published on {frontmatter.pubDate.toString().slice(0,10)}</p>
+    </div>
+<div class="tags-container">
+    <h3>Tags</h3>
+    <div class="tags">
+        {frontmatter.tags.map((tag) => (
+            <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+        ))}
+    </div>
+</div>
+<slot />
+
+<style>
+    .tags-container {
+        margin: 2rem 0;
+    }
+    
+    .tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+    }
+    
+    .tag {
+        margin: 0;
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.5rem;
+        background-color: #e0e0ff;
+    }
+    
+    .tag a {
+        color: #4040aa;
+        text-decoration: none;
+    }
+    
+    .image-container {
+        margin: 1.5rem 0;
+        max-width: 100%;
+    }
+    
+    .image-container img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>
